@@ -1,0 +1,28 @@
+.rh-contact{
+  padding: 22px;
+  background: rgba(0,0,0,.85);
+  border-radius: 10px;
+}
+.rh-contact__title{
+  color:#fff;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+.rh-contact__form{
+  display:grid;
+  gap: 12px;
+}
+.rh-input, .rh-textarea{
+  width:100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  outline: none;
+}
+.rh-input::placeholder, .rh-textarea::placeholder{ color: rgba(255,255,255,.75); }
+.rh-submit{ width: 140px; }
+.rh-status{ margin: 6px 0 0; color:#fff; }
+.rh-status--success{ color: #b7ffb7; }
+.rh-status--error{ color: #ffb7b7; }

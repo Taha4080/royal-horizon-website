@@ -1,0 +1,158 @@
+/* ===============================
+   BUSINESS SECTORS STORY LAYOUT
+================================ */
+
+.bs-story {
+  /* margin-top: 50px; */
+  /* background: #f1bd03; */
+  color: #fff;
+  padding: 100px 0;
+}
+
+/* GRID LAYOUT */
+.bs-layout {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 80px;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.bs-left {
+  min-width: 0;
+}
+
+.bs-step {
+  min-height: 100vh; /* كل قسم شاشة كاملة */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  opacity: 0.8;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+
+.bs-step.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bs-kicker {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.bs-title {
+  font-size: 42px;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.bs-subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.75;
+}
+
+.bs-description {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.bs-right {
+  min-width: 0;
+  /* margin-top: 20px ; */
+}
+
+.bs-sticky {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bs-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+}
+
+.bs-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  animation: fadeIn 0.1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.03); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.bs-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.7)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.bs-overlay h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.bs-overlay span {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* DOTS */
+.bs-dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .bs-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bs-sticky {
+    position: relative;
+    top: auto;
+    transform: none;
+  }
+
+  .bs-image {
+    height: 360px;
+  }
+
+  .bs-step {
+    min-height: auto;
+    padding: 60px 0;
+  }
+}

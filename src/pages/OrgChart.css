@@ -1,0 +1,399 @@
+/* =========================
+   Org Chart Section
+========================= */
+.org-sec{
+  padding: 90px 0;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(13,202,240,.10), transparent 55%),
+    radial-gradient(circle at 75% 25%, rgba(47,11,146,.10), transparent 60%),
+    #ffffff;
+}
+
+.org-head{
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.org-head--space{
+  margin-top: 65px;
+}
+
+.org-title{
+  margin: 0 0 10px;
+  font-weight: 950;
+  font-size: clamp(26px, 3vw, 40px);
+  color: #081228;
+}
+
+.org-sub{
+  margin: 0 auto;
+  max-width: 860px;
+  line-height: 1.8;
+  color: rgba(8,18,40,.70);
+  font-size: 15px;
+}
+
+/* =========================
+   Chart Container
+========================= */
+.org-chart{
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 22px;
+  padding: 34px 22px 26px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(8,18,40,.08);
+  box-shadow: 0 22px 60px rgba(0,0,0,.10);
+  overflow: hidden;
+}
+
+.org-chart::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(13,202,240,.09), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(47,11,146,.06), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(8,18,40,.03) 0 1px, transparent 1px 10px);
+  opacity: .6;
+  pointer-events:none;
+}
+
+/* =========================
+   Top Node
+========================= */
+.org-node{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.org-node--top{
+  width: min(520px, 92%);
+  margin: 0 auto;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(8,18,40,.10);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+  padding: 16px 18px;
+}
+
+.org-node__kicker{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: rgba(8,18,40,.55);
+  text-transform: uppercase;
+}
+
+.org-node__title{
+  margin-top: 6px;
+  font-weight: 950;
+  color: #081228;
+  font-size: 18px;
+}
+
+.org-node__sub{
+  margin-top: 4px;
+  font-size: 13px;
+  color: rgba(8,18,40,.65);
+}
+
+/* =========================
+   Lines
+========================= */
+.org-lines{
+  position: relative;
+  z-index: 2;
+  height: 34px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.org-line{
+  display:block;
+  background: rgba(8,18,40,.18);
+  border-radius: 999px;
+}
+
+.org-line--down{
+  width: 2px;
+  height: 34px;
+}
+
+.org-line--across{
+  position:absolute;
+  top: 34px;
+  width: min(780px, 92%);
+  height: 2px;
+}
+
+/* =========================
+   Leadership row
+========================= */
+.org-row{
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.org-row--leaders{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.org-pill{
+  background: rgba(8,18,40,.04);
+  border: 1px solid rgba(8,18,40,.10);
+  border-radius: 16px;
+  padding: 14px 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+.org-pill__role{
+  font-weight: 900;
+  color: #081228;
+  font-size: 13px;
+}
+
+.org-pill__name{
+  margin-top: 6px;
+  color: rgba(8,18,40,.72);
+  font-size: 13px;
+}
+
+/* =========================
+   Departments area
+========================= */
+.org-depts{
+  position: relative;
+  z-index: 2;
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+}
+
+.org-tabs{
+  display: grid;
+  gap: 10px;
+}
+
+.org-tab{
+  width: 100%;
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid rgba(8,18,40,.12);
+  background: #fff;
+  padding: 12px 12px;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  font-weight: 900;
+  color: rgba(8,18,40,.85);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.org-tab:hover{
+  transform: translateY(-1px);
+  border-color: rgba(13,202,240,.40);
+  background: rgba(13,202,240,.06);
+}
+
+.org-tab__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(8,18,40,.28);
+}
+
+.org-tab.is-active{
+  background: #081228;
+  color: #fff;
+  border-color: #081228;
+}
+
+.org-tab.is-active .org-tab__dot{
+  background: #0dcaf0;
+}
+
+.org-panel{
+  border-radius: 18px;
+  background: rgba(8,18,40,.96);
+  color: #fff;
+  padding: 18px;
+  box-shadow: 0 22px 60px rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.org-panel__head{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.org-panel__title{
+  margin: 0;
+  font-weight: 950;
+  font-size: 18px;
+}
+
+.org-panel__desc{
+  margin: 8px 0 0;
+  color: rgba(255,255,255,.72);
+  line-height: 1.7;
+  font-size: 13px;
+  max-width: 540px;
+}
+
+.org-badge{
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(13,202,240,.14);
+  color: #0dcaf0;
+  font-weight: 950;
+  font-size: 12px;
+  border: 1px solid rgba(13,202,240,.25);
+}
+
+/* teams cards */
+.org-teams{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.org-team{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.org-team__title{
+  font-weight: 950;
+  font-size: 13px;
+}
+
+.org-team__lead{
+  margin-top: 6px;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+}
+
+.org-team__note{
+  margin-top: 6px;
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+}
+
+/* =========================
+   Team Leaders cards
+========================= */
+.org-leadersGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.org-leaderCard{
+  background: #fff;
+  border: 1px solid rgba(8,18,40,.10);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+.org-leaderCard:hover{
+  transform: translateY(-4px);
+  border-color: rgba(13,202,240,.35);
+}
+
+.org-leaderCard__top{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.org-avatar{
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display:grid;
+  place-items:center;
+  font-weight: 950;
+  color: #081228;
+  background: rgba(13,202,240,.14);
+  border: 1px solid rgba(13,202,240,.30);
+}
+
+.org-leaderCard__name{
+  font-weight: 950;
+  color: #081228;
+}
+
+.org-leaderCard__role{
+  margin-top: 3px;
+  font-size: 12px;
+  color: rgba(8,18,40,.65);
+  font-weight: 800;
+}
+
+.org-leaderCard__desc{
+  margin: 12px 0 0;
+  color: rgba(8,18,40,.70);
+  line-height: 1.75;
+  font-size: 13px;
+}
+
+.org-leaderCard__actions{
+  margin-top: 14px;
+  display:flex;
+  gap: 10px;
+}
+
+.org-miniBtn{
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid rgba(8,18,40,.14);
+  background: #081228;
+  color: #fff;
+  font-weight: 950;
+  font-size: 12px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.org-miniBtn:hover{
+  transform: translateY(-1px);
+  background: rgba(13,202,240,.20);
+}
+
+.org-miniBtn--ghost{
+  background: #fff;
+  color: #081228;
+}
+
+.org-miniBtn--ghost:hover{
+  background: rgba(13,202,240,.10);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 992px){
+  .org-row--leaders{ grid-template-columns: 1fr; }
+  .org-depts{ grid-template-columns: 1fr; }
+  .org-teams{ grid-template-columns: 1fr; }
+  .org-leadersGrid{ grid-template-columns: 1fr; }
+}

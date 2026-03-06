@@ -1,0 +1,223 @@
+/* ===============================
+   Header Base
+================================*/
+.header-area{
+  background-color:#131d33;
+  margin-bottom:97px;
+}
+
+/* ===============================
+   Header Bottom
+================================*/
+.header-bottom{
+  width:100%;
+  transition:all .25s ease;
+}
+
+/* ===============================
+   Sticky Navbar (after scroll)
+================================*/
+.header-bottom.is-sticky{
+  position:fixed;
+  top:14px;                      /* مسافة من الأعلى */
+  left:50%;
+  transform:translateX(-50%);
+  z-index:9999;
+
+  width:min(1400px,calc(100% - 28px)); /* فراغ يمين ويسار */
+  border-radius:16px;
+
+  background:rgba(19,29,51,0.65);  /* شفافية */
+  backdrop-filter:blur(12px);
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   Navbar scroll state
+================================*/
+.rh-navbar--scrolled{
+  background:transparent;
+}
+
+/* ===============================
+   Logo
+================================*/
+.logo img{
+  max-width:150px;
+}
+
+/* ===============================
+   Navigation
+================================*/
+#navigation{
+  display:flex;
+  align-items:center;
+  gap:1px !important;
+}
+
+#navigation li{
+  list-style:none;
+  position:relative;
+}
+
+#navigation a{
+  text-decoration:none;
+  color:#ffffff;
+  font-weight:600;
+  transition:0.3s;
+}
+
+/* Hover */
+#navigation a:hover{
+  color:#0dcaf0;
+}
+
+/* Active */
+#navigation a.active{
+  color:#0dcaf0;
+}
+
+/* ===============================
+   Dropdown Menu
+================================*/
+.ul-submenu{
+  position:relative;
+}
+
+.ul-submenu .submenu{
+  position:absolute;
+  top:120%;
+  left:0;
+  width:260px;
+
+  background-color:rgba(19,29,51,0.65) !important;
+  backdrop-filter:blur(10px);
+
+  border-radius:10px;
+  padding:10px 0;
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+
+  transition:.25s;
+}
+
+.ul-submenu:hover .submenu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.submenu li{
+  padding:0;
+}
+
+.submenu a{
+  display:block;
+  padding:10px 18px;
+  font-size:14px;
+  color:#081228;
+  font-weight:500;
+}
+
+.submenu a:hover{
+  background:#f3f3f3;
+}
+
+/* ===============================
+   Contact Button
+================================*/
+.header-btn{
+  padding:18px 20px;
+  border-radius:50px;
+  font-weight:700;
+  border:1px solid #0dcaf0;
+  color:#081228;
+  background:#0dcaf0;
+  transition:.3s;
+}
+
+.header-btn:hover{
+  background:#09a9c4;
+  color:#fff;
+}
+
+/* ===============================
+   Login Icon
+================================*/
+.Login{
+  margin-left:25px;
+}
+
+.Login ul{
+  padding:0;
+  margin:0;
+}
+
+.Login li{
+  list-style:none;
+}
+
+.login-icon{
+  margin-right:6px;
+}
+
+/* ===============================
+   Mobile Toggle
+================================*/
+.rh-mobile-toggle{
+  border:0;
+  background:transparent;
+  font-size:28px;
+  padding:10px;
+}
+
+/* ===============================
+   Mobile Menu
+================================*/
+.rh-mobile-menu{
+  padding:6px;
+  background:#fcfbfb;
+  display:grid;
+  gap:2px ;
+  border-top:1px solid rgba(0,0,0,.08);
+}
+
+.rh-mobile-menu a{
+  color:#1f1f1f;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* Mobile submenu button */
+.rh-mobile-companies{
+  border:0;
+  background:transparent;
+  text-align:left;
+  font-weight:700;
+  color:#000;
+}
+
+/* mobile submenu links */
+.rh-mobile-sub{
+  padding-left:12px;
+  display:grid;
+  gap: 2px;
+}
+
+/* ===============================
+   Responsive
+================================*/
+@media(max-width:991px){
+
+  .header-bottom.is-sticky{
+    width:calc(100% - 20px);
+  }
+
+  #navigation{
+    display:none;
+  }
+
+}

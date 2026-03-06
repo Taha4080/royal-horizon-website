@@ -1,0 +1,434 @@
+/* =========================
+   Page Wrapper
+========================= */
+.company-wrap{
+  background: transparent;
+}
+
+/* =========================
+   Company Structure (NEW DESIGN)
+========================= */
+
+.cs-container{
+  max-width: 1200px;
+  margin: 90px auto;
+  padding: 36px 18px;
+  border-radius: 18px;
+
+  background:
+    radial-gradient(circle at 20% 18%, rgba(13,202,240,.12), transparent 50%),
+    radial-gradient(circle at 82% 20%, rgba(47,11,146,.10), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.86));
+
+  border: 1px solid rgba(8,18,40,.10);
+  box-shadow: 0 18px 55px rgba(0,0,0,.08);
+}
+
+.cs-title{
+  margin: 0 0 18px;
+  text-align: center;
+  font-weight: 950;
+  font-size: clamp(22px, 3vw, 34px);
+  color: #081228;
+  letter-spacing: .2px;
+}
+
+/* Top */
+.cs-top{
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.cs-holding{
+  width: min(720px, 96%);
+  border-radius: 16px;
+  padding: 16px 18px;
+  text-align: center;
+
+  background: rgba(8,18,40,.96);
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 18px 45px rgba(0,0,0,.18);
+}
+
+.cs-holdingTitle{
+  font-weight: 950;
+  font-size: clamp(16px, 2.5vw, 22px);
+  line-height: 1.2;
+}
+
+.cs-holdingSub{
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: .85;
+}
+
+.cs-level1{
+  width: min(980px, 96%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cs-cat{
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(8,18,40,.10);
+  box-shadow: 0 14px 32px rgba(0,0,0,.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-cat::before{
+  content:"";
+  position:absolute;
+  inset:-40px -40px auto auto;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at 30% 30%, rgba(13,202,240,.20), transparent 60%);
+  transform: rotate(18deg);
+  pointer-events:none;
+}
+
+.cs-catTitle{
+  margin: 0 0 4px;
+  font-weight: 950;
+  color: #081228;
+  font-size: 15px;
+}
+
+.cs-catSub{
+  margin: 0;
+  color: rgba(8,18,40,.70);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* Cards grid */
+.cs-grid{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cs-col{
+  border-radius: 16px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(8,18,40,.10);
+  box-shadow: 0 14px 32px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+.cs-colHead{
+  padding: 14px;
+  background: rgba(13,202,240,.10);
+  border-bottom: 1px solid rgba(13,202,240,.20);
+}
+
+.cs-colTitle{
+  margin: 0;
+  font-weight: 950;
+  color: #081228;
+  font-size: 14px;
+}
+
+.cs-colBody{
+  padding: 14px;
+}
+
+.cs-label{
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 2px;
+  color: rgba(8,18,40,.55);
+  margin: 8px 0 10px;
+}
+
+.cs-links{
+  display: grid;
+  gap: 10px;
+}
+
+.cs-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-decoration: none;
+  color: rgba(8,18,40,.85);
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  background: #fff;
+  border: 1px solid rgba(8,18,40,.10);
+
+  font-weight: 800;
+  font-size: 13px;
+
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.cs-link:hover{
+  transform: translateY(-2px);
+  border-color: #0dcaf08c;
+  box-shadow: 0 14px 28px rgba(0,0,0,.08);
+  color: #000;
+  background-color: #0dcaf08c;
+}
+
+.cs-linkArrow{
+  font-size: 14px;
+  opacity: .75;
+}
+
+.cs-link--special{
+  background: rgba(47,11,146,.06);
+  border-color: rgba(47,11,146,.16);
+  color: #2f0b92;
+}
+
+.cs-mt{ margin-top: 14px; }
+
+/* ===============================
+   Our Companies
+================================ */
+.company-title{
+  text-align: center;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 900;
+  margin: 70px 0 10px;
+}
+
+.company-sub{
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+  opacity: .75;
+}
+
+.company-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.company-card{
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 12px 28px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.company-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
+
+.company-img{
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.company-card h3{
+  margin: 16px 16px 6px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.company-card p{
+  margin: 0 16px 18px;
+  font-size: 14px;
+  opacity: .7;
+}
+
+/* ===============================
+   Fleet
+================================ */
+.fleet__container{
+  max-width: 1200px;
+  margin: 70px auto;
+  padding: 0 18px;
+}
+
+.fleet__head{
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fleet__title{
+  font-size: clamp(26px, 3.2vw, 44px);
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: #111827;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.fleet__text{
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.75;
+  text-align: start;
+}
+
+.fleet__text p{
+  margin: 0 0 12px;
+}
+
+.fleet__media{
+  margin: 32px 0 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.fleet__media img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===============================
+   Storage & Processing (sp-*)
+================================ */
+.sp{
+  margin: 80px 0 30px;
+}
+
+.sp__container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.sp__head{
+  max-width: 980px;
+  margin: 0 auto 26px;
+}
+
+.sp__title{
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: #111827;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.sp__text{
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.sp__text p{
+  margin: 0 0 12px;
+}
+
+.sp__grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.sp__card{
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.sp__card--wide{
+  grid-column: span 2;
+}
+
+.sp__card img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.sp__card--wide img{
+  aspect-ratio: 21 / 9;
+}
+
+/* ===== Team ===== */
+.fz-team{
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 320px;
+  background: #eaeaea;
+  box-shadow: 0 14px 32px rgba(0,0,0,.08);
+}
+
+.fz-team img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 992px){
+  .cs-level1{
+    grid-template-columns: 1fr;
+  }
+  .cs-grid{
+    grid-template-columns: 1fr;
+  }
+  .company-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px){
+  .sp{
+    margin: 60px 0 20px;
+  }
+  .sp__grid{
+    grid-template-columns: 1fr;
+  }
+  .sp__card--wide{
+    grid-column: auto;
+  }
+  .sp__card img{
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 600px){
+  .cs-container{
+    margin: 60px auto;
+    padding: 26px 14px;
+  }
+  .company-grid{
+    grid-template-columns: 1fr;
+  }
+  .fleet__container{
+    margin: 60px auto;
+  }
+  .fleet__media{
+    border-radius: 14px;
+  }
+}

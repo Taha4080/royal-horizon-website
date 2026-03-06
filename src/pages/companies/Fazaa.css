@@ -1,0 +1,341 @@
+/* ===============================
+   Fazaa Theme
+   Retail style: clean / modern / bright
+================================ */
+
+.fz-hero{
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* background: #071a2b; */
+}
+
+.fz-hero__bg{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.06);
+  filter: saturate(1.06) contrast(1.02); 
+   background-image: url("/assets/img/companies/fazaa-baniyas.jpg");
+
+}
+
+.fz-hero__overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 18, 45, 0.37), rgba(6,18,45,0.62)),
+    radial-gradient(circle at 20% 20%, rgba(13,202,240,0.22), transparent 60%);
+}
+
+.fz-hero__content{
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  color: #fff;
+  padding: 120px 0 80px;
+}
+
+.fz-hero__badge{
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(13,202,240,0.16);
+  border: 1px solid rgba(13,202,240,0.28);
+  color: #0dcaf0;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.fz-hero__title{
+  font-weight: 900;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.fz-hero__desc{
+  color: rgba(255, 255, 255, 0.921);
+  line-height: 1.75;
+  margin: 0 0 22px;
+}
+
+.fz-hero__actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ===== Features bar ===== */
+.fz-features{
+  padding: 22px 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.fz-features__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.fz-feature{
+  display: flex;
+  gap: 12px;
+  padding: 14px 14px;
+  border-radius: 14px;
+  background: #f7f9fc;
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.fz-feature__icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(13,202,240,.14);
+  color: #0dcaf0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  flex: 0 0 auto;
+}
+
+.fz-feature__t{
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+
+.fz-feature__p{
+  font-size: 13px;
+  opacity: .75;
+  line-height: 1.6;
+}
+
+/* ===== About Split ===== */
+.fz-split{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.fz-chips{
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fz-chip{
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(13,202,240,.12);
+  color: #0dcaf0;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.fz-media{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f4f6f8;
+  min-height: 280px;
+  box-shadow: 0 14px 32px rgba(0,0,0,.08);
+}
+
+.fz-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fz-media__ph{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  opacity: .55;
+}
+
+/* ===== Branches ===== */
+.fz-branches{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.fz-branch{
+  background: rgba(246, 243, 243, 0.597);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  color: #fff;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.fz-branch:hover{
+  transform: translateY(-6px);
+  border-color: rgba(13,202,240,0.35);
+  box-shadow: 0 18px 40px rgba(0,0,0,.25);
+}
+
+.fz-branch__img{
+  height: 170px;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fz-branch__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fz-branch__ph{
+  font-weight: 900;
+  opacity: .55;
+}
+
+.fz-branch__body{
+  padding: 14px 14px 16px;
+}
+
+.fz-branch__meta{
+  font-size: 12px;
+  opacity: .8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.fz-branch__t{
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.fz-branch__p{
+  margin: 0;
+  font-size: 13px;
+  opacity: .8;
+  line-height: 1.65;
+  color: #fff;
+}
+.location-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location-icon {
+  color: #0dcaf0;   /* نفس لون البراند */
+  font-size: 18px;
+}
+
+/* ===== Team ===== */
+.fz-team{
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 320px;
+  background: #eaeaea;
+  box-shadow: 0 14px 32px rgba(0,0,0,.08);
+}
+
+.fz-team img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fz-team__ph{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  opacity: .6;
+}
+
+/* CTA */
+.about-cta{
+  padding: 70px 0;
+  background: #fff;
+}
+
+.about-cta__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(8,18,40,.10);
+  box-shadow: 0 16px 40px rgba(0,0,0,.06);
+}
+
+.about-cta__title{
+  margin: 0 0 6px;
+  font-weight: 900;
+  color: #081228;
+}
+
+.about-cta__text{
+  margin: 0;
+  color: rgba(8,18,40,.72);
+  line-height: 1.8;
+  font-size: 14px;
+  max-width: 620px;
+}
+
+.about-cta__btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: #0dcaf0;
+  color: #081228;
+  font-weight: 900;
+  text-decoration: none;
+  border: 1px solid #0dcaf0;
+  transition: transform .18s ease, box-shadow .18s ease;
+  white-space: nowrap;
+}
+.about-cta__btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(13,202,240,.18);
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 992px){
+  .fz-features__grid{
+    grid-template-columns: 1fr;
+  }
+  .fz-split{
+    grid-template-columns: 1fr;
+  }
+  .fz-branches{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px){
+  .fz-branches{
+    grid-template-columns: 1fr;
+  }
+}

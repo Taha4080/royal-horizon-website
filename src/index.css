@@ -1,0 +1,141 @@
+/* Keep React styles minimal so the original template CSS controls the design */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the app takes full width */
+#root {
+  width: 100%;
+}
+/* body{
+  font-family: ;
+} */
+ /* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* أنواع مختلفة (اختياري) */
+.reveal-left {
+  transform: translateX(-30px);
+}
+
+.reveal-right {
+  transform: translateX(30px);
+}
+
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+  transform: translateX(0);
+}
+/* =========================
+   Scroll Reveal (Enhanced)
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0) scale(0.985);
+  filter: blur(6px);
+  transition-property: opacity, transform, filter;
+  transition-duration: 850ms;
+  transition-timing-function: cubic-bezier(.2,.65,.2,1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* اتجاهات */
+.reveal-left {
+  transform: translate3d(-36px, 0, 0) scale(0.985);
+}
+
+.reveal-right {
+  transform: translate3d(36px, 0, 0) scale(0.985);
+}
+
+.reveal-up {
+  transform: translate3d(0, 36px, 0) scale(0.985);
+}
+
+.reveal-down {
+  transform: translate3d(0, -36px, 0) scale(0.985);
+}
+
+/* عند الظهور: نفس النهاية للجميع */
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-up.is-visible,
+.reveal-down.is-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Fade-only (اختياري) */
+.reveal-fade {
+  transform: none;
+  filter: none;
+}
+.reveal-fade.is-visible {
+  transform: none;
+}
+
+/* =========================
+   Stagger (اختياري)
+   استخدمه على العناصر الداخلية: class="reveal-item"
+========================= */
+.reveal.is-visible .reveal-item {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  filter: blur(0);
+}
+
+.reveal .reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  filter: blur(4px);
+  transition: opacity 700ms cubic-bezier(.2,.65,.2,1),
+              transform 700ms cubic-bezier(.2,.65,.2,1),
+              filter 700ms cubic-bezier(.2,.65,.2,1);
+}
+
+/* delays جاهزة لحد 12 عنصر */
+.reveal.is-visible .reveal-item:nth-child(1)  { transition-delay: 60ms; }
+.reveal.is-visible .reveal-item:nth-child(2)  { transition-delay: 120ms; }
+.reveal.is-visible .reveal-item:nth-child(3)  { transition-delay: 180ms; }
+.reveal.is-visible .reveal-item:nth-child(4)  { transition-delay: 240ms; }
+.reveal.is-visible .reveal-item:nth-child(5)  { transition-delay: 300ms; }
+.reveal.is-visible .reveal-item:nth-child(6)  { transition-delay: 360ms; }
+.reveal.is-visible .reveal-item:nth-child(7)  { transition-delay: 420ms; }
+.reveal.is-visible .reveal-item:nth-child(8)  { transition-delay: 480ms; }
+.reveal.is-visible .reveal-item:nth-child(9)  { transition-delay: 540ms; }
+.reveal.is-visible .reveal-item:nth-child(10) { transition-delay: 600ms; }
+.reveal.is-visible .reveal-item:nth-child(11) { transition-delay: 660ms; }
+.reveal.is-visible .reveal-item:nth-child(12) { transition-delay: 720ms; }
+
+/* =========================
+   Accessibility
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal .reveal-item {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+  }
+  .reveal .reveal-item {
+    opacity: 1 !important;
+  }
+}

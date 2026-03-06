@@ -1,0 +1,145 @@
+/* ===== Wrapper ===== */
+.ct-wrap{
+  padding: 80px 0;
+  Background: #0B2C4D
+}
+
+.ct-container{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.ct-head{
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.ct-title{
+  margin: 0 0 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: clamp(22px, 2.2vw, 34px);
+  color: #ffffff;
+}
+
+.ct-sub{
+  margin: 0;
+  max-width: 860px;
+  line-height: 1.9;
+  opacity: .78;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* ===== Marquee (Auto infinite) ===== */
+.ct-marquee{
+  margin-top: 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(11,26,51,0.04), rgba(11,26,51,0.02));
+  border: 1px solid rgba(11,26,51,0.06);
+  overflow: hidden;             /* مهم جداً للدائري */
+  padding: 14px 6px 18px;
+}
+
+/* المسار المتحرك */
+.ct-marquee__track{
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  will-change: transform;
+  animation: ctScroll 28s linear infinite;
+  animation-play-state: paused; /* لا يعمل إلا عند is-running */
+}
+
+/* يبدأ عند وصول المستخدم للسكشن */
+.ct-marquee.is-running .ct-marquee__track{
+  animation-play-state: running;
+}
+
+/* توقف عند hover (مريح للمستخدم) */
+.ct-marquee:hover .ct-marquee__track{
+  animation-play-state: paused;
+}
+
+/* مجموعة العناصر (تتكرر مرتين) */
+.ct-marquee__group{
+  display: flex;
+  gap: 18px;
+}
+
+/* حركة دائرية: نتحرك نصف المسافة (لأننا كررنا العناصر مرتين) */
+@keyframes ctScroll{
+  from{ transform: translateX(0); }
+  to  { transform: translateX(-50%); }
+}
+
+/* ===== Card ===== */
+.ct-item{
+  width: 270px;
+  background: #ffffffc9;
+  border: 1px solid rgba(11,26,51,0.08);
+  border-radius: 16px;
+  padding: 8px 16px 14px;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.ct-item:hover{
+  transform: translateY(-2px);
+  border-color: rgba(13,202,240,.45);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.10);
+}
+
+.ct-top{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ct-pin{
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #f0180d;
+  box-shadow: 0 0 0 6px rgba(1, 11, 13, 0.081);
+  flex: 0 0 auto;
+}
+
+.ct-year{
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: .8px;
+  color: #0b1a33;
+}
+
+.ct-text{
+  margin: 0;
+  font-size: 12px;
+  opacity: .82;
+  color: #0b1a33;
+  text-align: left;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* Hint */
+.ct-hint{
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: .65;
+  color: #ffffff;
+  text-align: right;
+}
+
+/* احترام إعدادات تقليل الحركة */
+@media (prefers-reduced-motion: reduce){
+  .ct-marquee__track{ animation: none !important; }
+}
+
+/* موبايل */
+@media (max-width: 600px){
+  .ct-head{ text-align: center; }
+  .ct-hint{ text-align: center; }
+  .ct-item{ width: 240px; }
+}

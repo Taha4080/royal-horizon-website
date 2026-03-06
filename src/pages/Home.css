@@ -1,0 +1,21 @@
+
+.rh-section{ padding: 70px 0; }
+.rh-section--center{ text-align:center; }
+.rh-title{ font-weight: 900; letter-spacing: .5px; margin: 0 0 28px; }
+.rh-title span{ font-weight: 300; }
+.rh-title--center{ text-align:center; }
+.rh-sectors{ margin-top: 10px; gap: 16px; }
+.rh-sector h5{ font-weight: 800; margin-top: 14px; }
+.rh-trust{ background: #fff; }
+.rh-ar{ font-weight: 900; font-size: 40px; margin-bottom: 6px; }
+.rh-sub{ letter-spacing: 3px; font-weight: 700; margin-bottom: 18px; }
+.rh-par{ max-width: 880px; margin: 0 auto; color: #666; }
+.rh-stats{ background: #f5c542; }
+.rh-stat h3{ font-weight: 900; margin: 0; }
+.rh-stat p{ margin: 6px 0 0; font-weight: 700; }
+.rh-card{ border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: 18px; height: 100%; }
+.rh-grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.rh-grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.rh-imgBox{ background: #f3f3f3; border-radius: 10px; min-height: 50px; overflow:hidden; }
+.rh-mapBox{ background: #f3f3f3; border-radius: 12px; min-height: 360px; overflow:hidden; }
+.rh-contactMap{ background: #111; }
