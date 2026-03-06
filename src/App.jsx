@@ -38,14 +38,14 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/gallery" element={<Gallery />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/companies" element={<Companies />} />
         <Route path="/companies/horizon" element={<Horizon />} />
         <Route path="/companies/overseas" element={<Overseas />} />
         <Route path="/companies/fazaa" element={<Fazaa />} />
-        <Route path="/EmployeeLogin" element={<EmployeeLogin/>}/>
+        <Route path="/EmployeeLogin" element={<EmployeeLogin/>}/> */}
       </Route>
     </Routes>
   );
