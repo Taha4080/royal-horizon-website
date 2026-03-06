@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Company.css";
-import "./Horizon.css";
+import "./horizon.css";
 import { useReveal } from "../../useReveal"; // ✅ عدّل المسار حسب مكان الملف عندك
 
 /* =========================
