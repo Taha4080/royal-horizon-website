@@ -289,3 +289,45 @@
     display: none; /* الأسهم تختفي على الموبايل */
   }
 }
+.rh-heroX__left,
+.rh-heroX__imgWrap{
+  min-height: 82vh;
+}
+
+@media (max-width:768px){
+
+.rh-heroX__left,
+.rh-heroX__imgWrap{
+  min-height:55vh;
+}
+
+}
+@media (max-width:768px){
+
+.rh-heroX__title{
+  font-size:28px;
+  line-height:1.2;
+}
+
+.rh-heroX__subtitle{
+  font-size:14px;
+}
+
+.rh-heroX__kicker{
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+}
+@media (max-width:768px){
+
+.rh-heroX__card{
+  padding:24px 20px;
+  border-radius:18px;
+}
+
+.rh-heroX__content{
+  padding:20px;
+}
+
+}
