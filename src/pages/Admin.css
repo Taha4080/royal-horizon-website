@@ -1,0 +1,68 @@
+.admin {
+    margin-top: 100px;
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.admin-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.status {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.status.pending {
+  color: orange;
+}
+
+.status.accepted {
+  color: green;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.view {
+  background: #3498db;
+}
+
+.accept {
+  background: #2ecc71;
+}
+
+.delete {
+  background: #e74c3c;
+}

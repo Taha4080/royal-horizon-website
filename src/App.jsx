@@ -13,7 +13,8 @@ import Overseas from "./pages/companies/Overseas";
 import Fazaa from "./pages/companies/Fazaa";
 import EmployeeLogin from "./pages/EmployeeLogin";
 import { useEffect } from "react";
-
+import Admin from "./pages/Admin";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   useEffect(() => {
@@ -46,6 +47,8 @@ export default function App() {
         <Route path="/companies/overseas" element={<Overseas />} />
         <Route path="/companies/fazaa" element={<Fazaa />} />
         <Route path="/EmployeeLogin" element={<EmployeeLogin/>}/>
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
     </Routes>
   );

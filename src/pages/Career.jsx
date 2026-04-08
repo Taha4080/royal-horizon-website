@@ -198,64 +198,54 @@ export default function Career() {
       reader.readAsDataURL(file);
     });
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (!openJob) return;
+const onSubmit = async (e) => {
+  e.preventDefault();
+  if (!openJob) return;
 
-    if (!app.name || !app.email || !app.phone) {
-      alert("Please fill in Name, Email, and Phone.");
-      return;
-    }
-    if (!app.cvFile) {
-      alert("Please upload your CV file.");
-      return;
-    }
-    if (!SCRIPT_URL || SCRIPT_URL === "SCRIPT_URL_HERE") {
-      alert("Please set SCRIPT_URL in Career.jsx (Apps Script Web App URL).");
-      return;
-    }
+  if (!app.name || !app.email || !app.phone) {
+    alert("Please fill all fields");
+    return;
+  }
 
-    try {
-      setIsSubmitting(true);
-      setSuccessMsg("");
+  if (!app.cvFile) {
+    alert("Please upload CV");
+    return;
+  }
 
-      const fileBase64 = await toBase64(app.cvFile);
+  try {
+    setIsSubmitting(true);
 
-      const payload = {
-        jobId: openJob.id,
-        jobTitle: openJob.title,
-        dept: openJob.dept,
-        location: openJob.location,
-        type: openJob.type,
+    const formData = new FormData();
 
-        name: app.name,
-        email: app.email,
-        phone: app.phone,
+    formData.append("name", app.name);
+    formData.append("email", app.email);
+    formData.append("phone", app.phone);
+    formData.append("jobId", openJob.id);
+    formData.append("jobTitle", openJob.title);
+    formData.append("cv", app.cvFile);
 
-        fileName: app.cvFile.name,
-        fileType: app.cvFile.type || "application/octet-stream",
-        fileBase64,
-      };
+    const res = await fetch("http://localhost:3001/apply", {
+      method: "POST",
+      body: formData,
+    });
 
-      const res = await fetch(SCRIPT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(payload),
-      });
+    const data = await res.json();
 
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.ok) throw new Error("Upload failed");
+    if (data.message === "Application submitted successfully") {
+  setSuccessMsg("✅ Application submitted successfully!");
+} else {
+  alert("Error submitting application");
+}
 
-      setSuccessMsg("✅ Application submitted successfully! Your CV has been uploaded.");
-      setApp({ name: "", email: "", phone: "", cvFile: null });
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong while submitting. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    setSuccessMsg("✅ Application submitted successfully!");
+    setApp({ name: "", email: "", phone: "", cvFile: null });
 
+  } catch (err) {
+    alert("Error submitting application");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <main className="cr-page">
       {/* HERO */}
@@ -405,7 +395,7 @@ export default function Career() {
               <h3>Didn’t find a match?</h3>
               <p>Send your CV and we’ll reach out when a suitable role becomes available.</p>
             </div>
-            <a className="cr-btn" href="mailto:hr@royal-horizon.com">
+            <a className="cr-btn" href="mailto:join@royalhorizon.group">
               Send CV
             </a>
           </div>

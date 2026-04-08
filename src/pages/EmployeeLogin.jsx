@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import "./EmployeeLogin.css";
-// import Policies from './Policies';
+import axios from "axios";
  import Dashboard from './Dashboard';
+ 
 
 export default function EmployeeLogin() {
   const [activeTab, setActiveTab] = useState("employee");
@@ -12,28 +13,35 @@ export default function EmployeeLogin() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    // يوزر تجريبي
-    const demoUsers = {
-      employee: { email: "test@company.com", password: "12345678" },
-      Supplier: { email: "Supplier@company.com", password: "12345678" }
-    };
+  axios.post("http://localhost:3001/login", {
+    email: form.email,
+    password: form.password,
+  })
+  .then((res) => {
 
-    const user = demoUsers[activeTab];
+    if (res.data.status === "success") {
 
-    if (form.email === user.email && form.password === user.password) {
-      alert(`${activeTab === "employee" ? "Employee" : "Supplier"} Login Successful`);
-      setLoggedIn(true); // نجاح الدخول
+      const role = res.data.role;
+
+      if (role === "admin") {
+        window.location.href = "/admin";
+      } else {
+        window.location.href = "/dashboard";
+      }
+
     } else {
-      alert("Invalid Credentials");
+      alert("Invalid email or password");
     }
-  };
 
-  // بعد تسجيل الدخول نعرض صفحة السياسات فقط للموظف
- if (loggedIn && activeTab === "employee") {
-    return <Dashboard />; }
+  })
+  .catch((err) => {
+    console.log(err);
+    alert("Server error");
+  });
+};
 
   return (
     <section className='emp-login'>
@@ -46,13 +54,13 @@ export default function EmployeeLogin() {
             className={activeTab === "employee" ? "active" : ""}
             onClick={() => setActiveTab("employee")}
           >
-            Employee
+            Employee/Supplier
           </button>
           <button 
             className={activeTab === "Supplier" ? "active" : ""}
             onClick={() => setActiveTab("Supplier")}
           >
-            Supplier
+            Admin
           </button>
         </div>
 

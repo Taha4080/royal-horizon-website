@@ -11,8 +11,9 @@ import {
 import "./StatsBar.css";
 
 /* ✅ تنسيق أرقام مثل 15,000 */
-function formatNumber(n) {
-  return new Intl.NumberFormat("en-US").format(Math.round(n));
+function formatNumber(n, plus) {
+  const num = new Intl.NumberFormat("en-US").format(Math.round(n));
+  return plus ? "+" + num : num;
 }
 
 /* ✅ Hook: عداد من 0 إلى target (يعيد التشغيل كل ما startKey يتغير) */
@@ -42,29 +43,31 @@ function useCountUp(target, startKey, duration = 1200) {
   return value;
 }
 
-function StatItem({ value, label, startKey, icon, visible, index }) {
+function StatItem({ value, label, startKey, icon, visible, index, plus }) {
   const counted = useCountUp(value, startKey, 1300);
 
+  
   return (
     <div
       className={`stats-item ${visible ? "is-visible" : ""}`}
       style={{ transitionDelay: `${index * 120}ms` }}
     >
       <div className="start-icon">{icon}</div>
-      <div className="stats-value">{formatNumber(counted)}</div>
+      <div className="stats-value">{formatNumber(counted, plus)}</div>
       <div className="stats-label">{label}</div>
     </div>
   );
 }
 
+
 export default function StatsBar() {
   const stats = useMemo(
     () => [
-      { value: 15000, label: "Products", icon: <FaBoxOpen /> },
-      { value: 10000, label: "Customers", icon: <FaUsers /> },
+      { value: 15000, label: "Products", icon: <FaBoxOpen  /> , plus: true},
+      { value: 40000, label: "Customers", icon: <FaUsers /> , plus: true},
       { value: 17, label: "Years Experience", icon: <FaCalendarAlt /> },
       { value: 17, label: "Brands", icon: <FaTags /> },
-      { value: 16, label: "Govt Supply Contracts", icon: <FaBuilding /> },
+      { value: 16, label: "Govt Supply Contracts", icon: <FaBuilding /> , plus: true },
       { value: 100, label: "Projects Completed", icon: <FaProjectDiagram /> },
     ],
     []
@@ -118,16 +121,17 @@ export default function StatsBar() {
       <div className="container stats-content">
         <div className="stats-grid">
           {stats.map((s, i) => (
-            <StatItem
-              key={s.label}
-              value={s.value}
-              label={s.label}
-              icon={s.icon}
-              startKey={startKey}
-              visible={visible}
-              index={i}
-            />
-          ))}
+  <StatItem
+    key={s.label}
+    value={s.value}
+    label={s.label}
+    icon={s.icon}
+    startKey={startKey}
+    visible={visible}
+    index={i}
+    plus={s.plus}
+  />
+))}
         </div>
       </div>
     </section>
